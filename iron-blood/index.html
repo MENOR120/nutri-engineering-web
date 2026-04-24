@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iron Blood Protocol | Nutritional Engineering</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>STOP THE FATIGUE | Iron Blood Protocol</title>
     <script src="https://cdn.tailwindcss.com"></script>
 
     <script>
@@ -23,109 +23,215 @@
     /></noscript>
 
     <style>
-        .hero-bg { background-color: #fcfcfc; }
-        img { opacity: 0; transition: opacity 0.5s ease-in; }
-        img[src] { opacity: 1; }
+        .hero-bg { background-color: #f9fafb; }
+        .cta-pulse { animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.02); } 100% { transform: scale(1); } }
+        .timer-box { background: #111827; color: #fbbf24; padding: 8px; border-radius: 6px; font-weight: bold; min-width: 50px; text-align: center; }
+        body { -webkit-font-smoothing: antialiased; }
+        
+        /* Animación para el Lead Flash */
+        .lead-flash { animation: slideUp 0.5s ease-out forwards; }
+        @keyframes slideUp { from { transform: translateY(100%); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
     </style>
 </head>
 <body class="hero-bg text-gray-800 font-sans">
 
-    <header class="py-6 px-4 text-center border-b border-gray-100 bg-white shadow-sm">
-        <h1 class="text-2xl md:text-3xl font-bold tracking-tight text-gray-900">IRON <span class="text-red-600">BLOOD</span> PROTOCOL</h1>
+    <div id="lead-notification" class="fixed bottom-4 left-4 z-[60] hidden">
+        <div class="bg-white shadow-2xl rounded-lg p-3 border border-gray-100 flex items-center gap-3 lead-flash max-w-[280px]">
+            <div class="bg-green-100 p-2 rounded-full text-green-600">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+            </div>
+            <div class="flex flex-col">
+                <p class="text-[11px] font-bold text-gray-900 leading-tight">🚀 Boost Hemoglobin in 7 Days - Only $7</p>
+                <p class="text-[9px] text-gray-400 uppercase tracking-widest mt-1">Verified Purchase from USA</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-gray-900 text-white py-2 px-4 sticky top-0 z-50 shadow-md">
+        <div class="max-w-4xl mx-auto flex justify-between items-center">
+            <p class="text-[10px] md:text-sm font-bold uppercase tracking-wider">Offer Ends In:</p>
+            <div class="flex gap-1 md:gap-2 items-center text-lg md:text-xl" id="timer">
+                <div class="timer-box text-sm md:text-xl" id="minutes">15</div>
+                <div class="text-white font-bold">:</div>
+                <div class="timer-box text-sm md:text-xl" id="seconds">00</div>
+            </div>
+        </div>
+    </div>
+
+    <header class="py-4 px-4 text-center bg-white shadow-sm border-b border-gray-100">
+        <h1 class="text-lg md:text-xl font-black tracking-tighter text-gray-900 uppercase">Iron <span class="text-green-600">Blood</span> Protocol</h1>
     </header>
 
-    <main class="max-w-4xl mx-auto px-6 py-12 md:py-16">
+    <main class="max-w-4xl mx-auto px-5 py-8 md:py-16">
         
-        <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-6">
-                The 7-Day Plan to <span class="text-red-600">Boost Hemoglobin</span> Using Nutritional Engineering
+        <div class="text-center mb-8">
+            <h2 class="text-3xl md:text-6xl font-black text-gray-900 leading-[1.1] mb-5">
+                Tired of feeling <span class="text-green-600 underline block mt-1">permanently exhausted?</span>
             </h2>
-            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-                Optimize your metabolism and fix iron levels in record time with our bio-absorption system. Perfect for low energy & vitality recovery.
+            <p class="text-lg md:text-2xl text-gray-700 font-medium leading-relaxed">
+                Discover the <span class="text-gray-900 font-bold">Nutritional Engineering Hack</span> to boost hemoglobin in 7 days—without useless supplements.
             </p>
         </div>
 
-        <div class="mb-16 flex justify-center">
-            <div class="relative bg-white p-2 rounded-3xl shadow-2xl border border-gray-100 transform -rotate-1 hover:rotate-0 transition-transform duration-300">
-                <img src="iron-blood-ipad.jpg" alt="Iron Blood Protocol iPad with Juices" class="rounded-2xl max-w-full h-auto md:max-w-lg mx-auto" width="512" height="512" loading="eager">
-                
-                <div class="absolute -bottom-6 -right-6 bg-white p-3 rounded-full shadow-lg border border-gray-100 hidden md:block">
-                    <img src="https://img.icons8.com/fluency/96/guarantee--v1.png" alt="Guarantee Icon" class="w-12 h-12">
+        <div class="mb-10 flex justify-center">
+            <div class="relative bg-white p-2 md:p-3 rounded-2xl shadow-xl border border-gray-200">
+                <img src="iron-blood-ipad.jpg" alt="Iron Blood Protocol System" class="rounded-xl w-full max-w-[320px] md:max-w-md h-auto block mx-auto">
+                <div class="absolute -top-3 -right-3 bg-green-500 text-white font-bold px-3 py-1 md:px-4 md:py-2 rounded-full shadow-lg transform rotate-12 border-2 border-white text-[10px] md:text-sm uppercase">
+                    Instant Access
                 </div>
             </div>
         </div>
 
-        <div class="bg-white rounded-3xl shadow-xl p-8 md:p-14 mb-16 border border-gray-100 relative overflow-hidden">
-            <div class="absolute top-0 right-0 w-32 h-32 bg-red-50 rounded-full -mr-16 -mt-16 opacity-50"></div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
+            <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 border-l-4 border-l-green-500">
+                <div class="flex items-center mb-3">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-10 h-10 rounded-full mr-3 border border-gray-100">
+                    <div><p class="font-bold text-sm">Emily S.</p><p class="text-[10px] text-gray-400">New York, NY</p></div>
+                </div>
+                <p class="italic text-gray-600 text-sm leading-snug">"I finally stopped crashing at 2 PM. After day 4 of this protocol, my energy levels are through the roof. Finally something that actually works!"</p>
+            </div>
+            <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 border-l-4 border-l-green-500">
+                <div class="flex items-center mb-3">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-10 h-10 rounded-full mr-3 border border-gray-100">
+                    <div><p class="font-bold text-sm">David R.</p><p class="text-[10px] text-gray-400">Austin, TX</p></div>
+                </div>
+                <p class="italic text-gray-600 text-sm leading-snug">"Simple and high-impact. This bypasses the digestive issues I had with iron pills. Best $7 I've ever spent on my health."</p>
+            </div>
+            <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 border-l-4 border-l-green-500">
+                <div class="flex items-center mb-3">
+                    <img src="https://randomuser.me/api/portraits/women/68.jpg" class="w-10 h-10 rounded-full mr-3 border border-gray-100">
+                    <div><p class="font-bold text-sm">Jessica M.</p><p class="text-[10px] text-gray-400">Miami, FL</p></div>
+                </div>
+                <p class="italic text-gray-600 text-sm leading-snug">"The 'Iron Thief' bonus alone is worth 10x the price. I didn't realize my morning coffee was blocking everything. Life changer!"</p>
+            </div>
+            <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 border-l-4 border-l-green-500">
+                <div class="flex items-center mb-3">
+                    <img src="https://randomuser.me/api/portraits/men/46.jpg" class="w-10 h-10 rounded-full mr-3 border border-gray-100">
+                    <div><p class="font-bold text-sm">Robert K.</p><p class="text-[10px] text-gray-400">San Diego, CA</p></div>
+                </div>
+                <p class="italic text-gray-600 text-sm leading-snug">"As a runner, my ferritin was always low. This protocol helped me recover faster without the stomach pain of tablets."</p>
+            </div>
+        </div>
 
-            <h3 class="text-3xl font-bold mb-8 text-gray-950">What makes this protocol unique?</h3>
-            <p class="text-xl leading-relaxed mb-8 italic border-l-4 border-red-600 pl-6 bg-gray-50 py-4 rounded-r-xl">
-                "The key to this method isn't how much iron you consume, but how much bioavailability you generate."
-            </p>
+        <div class="bg-green-50 rounded-2xl p-6 mb-10 border border-green-100">
+            <h3 class="text-xl font-bold mb-4 text-gray-900">Why standard iron pills fail:</h3>
+            <ul class="space-y-3 text-base">
+                <li class="flex items-start"><span class="text-green-600 mr-2 font-bold">✓</span> <span><span class="font-bold">The Absorption Gap:</span> Most pills only have a 2% uptake.</span></li>
+                <li class="flex items-start"><span class="text-green-600 mr-2 font-bold">✓</span> <span><span class="font-bold">Nutrient Blockers:</span> Coffee and calcium are "stealing" your iron.</span></li>
+                <li class="flex items-start"><span class="text-green-600 mr-2 font-bold">✓</span> <span><span class="font-bold">Bio-Availability:</span> We use precision food-pairing to force absorption.</span></li>
+            </ul>
+        </div>
+
+        <div class="bg-white rounded-3xl shadow-2xl p-6 md:p-12 mb-10 border border-gray-100">
+            <h3 class="text-2xl md:text-3xl font-black mb-6 text-center text-gray-900 uppercase">Special Launch Stack:</h3>
             
-            <div class="grid md:grid-cols-2 gap-10 mb-10">
-                <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100">
-                    <h4 class="font-bold text-red-700 text-lg mb-3">Non-Heme Iron Activation</h4>
-                    <p class="text-gray-700 leading-relaxed">Pure plant sources with high mineral density combined with biological catalysts that 'open the door' of your cells.</p>
+            <div class="space-y-4 mb-8">
+                <div class="flex justify-between items-center border-b pb-3 text-sm md:text-base">
+                    <div>
+                        <p class="font-bold uppercase">1. Iron Blood Master Protocol</p>
+                        <p class="text-gray-500 italic text-[10px]">The 7-day metabolic blueprint.</p>
+                    </div>
+                    <span class="text-gray-400 line-through">$27.00</span>
                 </div>
-                <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100">
-                    <h4 class="font-bold text-red-700 text-lg mb-3">Anti-Nutrient Blockage</h4>
-                    <p class="text-gray-700 leading-relaxed">Identify and neutralize 'iron thieves' (like tannins and calcium) that ruin your nutritional progress.</p>
+                <div class="flex justify-between items-center border-b pb-3 text-sm md:text-base text-green-700">
+                    <div>
+                        <p class="font-bold uppercase">BONUS #1: Bio-Absorption Guide</p>
+                        <p class="text-gray-500 italic text-[10px]">Force your body to use every milligram.</p>
+                    </div>
+                    <span class="font-bold uppercase">Free</span>
+                </div>
+                <div class="flex justify-between items-center border-b pb-3 text-sm md:text-base text-green-700">
+                    <div>
+                        <p class="font-bold uppercase">BONUS #2: The Iron-Thief Manual</p>
+                        <p class="text-gray-500 italic text-[10px]">Stop the 60% loss from 'bad' food pairings.</p>
+                    </div>
+                    <span class="font-bold uppercase">Free</span>
+                </div>
+                <div class="flex justify-between items-center text-3xl font-black text-green-600 bg-green-50 p-4 rounded-xl mt-4">
+                    <p class="text-lg text-gray-900">Price Today:</p>
+                    <p>$7 USD</p>
                 </div>
             </div>
 
-            <div class="space-y-5 mb-12 text-lg">
-                <p class="flex items-center"><span class="text-green-500 mr-3 text-2xl">✔</span> 7-Day Master Calendar & Specific Recipes</p>
-                <p class="flex items-center"><span class="text-green-500 mr-3 text-2xl">✔</span> Smart Shopping List (Budget & Time Optimized)</p>
-                <p class="flex items-center"><span class="text-green-500 mr-3 text-2xl">✔</span> Strategic Metabolic Absorption Schedule</p>
-                <p class="flex items-center"><span class="text-green-500 mr-3 text-2xl">✔</span> The Iron Thief Manual (Stop the 60% loss)</p>
-            </div>
+            <button onclick="enviarYCheckout()" class="cta-pulse w-full bg-green-600 hover:bg-green-700 text-white font-black py-5 px-4 rounded-xl text-xl md:text-3xl transition duration-300 shadow-lg uppercase tracking-tight">
+                Get Instant Access Now
+            </button>
+            <p class="text-center mt-4 text-[10px] text-gray-400 uppercase font-bold tracking-widest flex items-center justify-center gap-1">
+                <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"></path></svg>
+                Secured & Powered by Hotmart®
+            </p>
+        </div>
 
-            <div class="text-center bg-gray-50 rounded-2xl p-8 border border-gray-100">
-                <p class="text-gray-500 mb-2 uppercase tracking-widest text-sm font-bold">Instant Digital Access</p>
-                <p class="text-5xl font-extrabold text-gray-950 mb-6">$7 <span class="text-lg text-gray-400 font-medium">USD</span></p>
-                
-                <button onclick="enviarYCheckout()" class="inline-block w-full md:w-auto bg-green-600 hover:bg-green-700 text-white font-extrabold py-5 px-8 md:px-12 rounded-2xl text-xl md:text-2xl transition duration-300 shadow-2xl transform hover:scale-105 active:scale-95 text-center cursor-pointer">
-                    GET THE PROTOCOL NOW
-                </button>
-                
-                <div class="flex items-center justify-center gap-4 mt-6 text-gray-500 text-sm">
-                    <p class="flex items-center"><img src="https://img.icons8.com/ios-glyphs/30/security-checked.png" alt="Secure icon" class="w-4 h-4 mr-1"> Secured Payment</p>
-                    <p class="flex items-center"><img src="https://img.icons8.com/ios-glyphs/30/calendar.png" alt="Calendar icon" class="w-4 h-4 mr-1"> 30-Day Money-Back Guarantee</p>
-                </div>
+        <div class="max-w-3xl mx-auto mb-12 space-y-4">
+            <h3 class="text-xl font-bold mb-6 text-center uppercase tracking-widest text-gray-900">Common Questions</h3>
+            <div class="bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
+                <p class="font-bold text-gray-900 mb-2">Is this a physical book?</p>
+                <p class="text-gray-600 text-sm">No, this is a 100% digital download. You will get instant access to the PDF guides right after the checkout so you can start today.</p>
+            </div>
+            <div class="bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
+                <p class="font-bold text-gray-900 mb-2">Do I need expensive or rare ingredients?</p>
+                <p class="text-gray-600 text-sm">Absolutely not. Every ingredient in this protocol is available at your local grocery store (Walmart, Kroger, etc.). It’s about how you combine them, not the price tag.</p>
+            </div>
+            <div class="bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
+                <p class="font-bold text-gray-900 mb-2">Can I do this if I'm vegan?</p>
+                <p class="text-gray-600 text-sm">Yes. We include options for plant-based sources and explain exactly how to activate non-heme iron for maximum results.</p>
             </div>
         </div>
+
+        <div class="text-center max-w-2xl mx-auto border-t pt-8">
+            <img src="https://img.icons8.com/fluency/96/guarantee--v1.png" class="w-12 h-12 mx-auto mb-3">
+            <h4 class="text-lg font-bold mb-1 text-gray-900">30-Day Money-Back Guarantee</h4>
+            <p class="text-gray-500 text-xs px-4">If you don't feel a difference in your energy levels within the first week, we'll refund your $7. No questions asked. No risk for you.</p>
+        </div>
+
     </main>
 
-    <footer class="py-16 bg-gray-950 text-center text-gray-400 text-sm px-6">
-        <p class="font-bold text-lg text-white mb-4">IRON BLOOD PROTOCOL</p>
-        <p>&copy; 2026 Nutritional Engineering Systems. All rights reserved.</p>
+    <footer class="py-10 bg-gray-900 text-center text-[9px] px-6 text-gray-500 border-t border-gray-800 uppercase tracking-widest leading-relaxed">
+        <p class="text-white mb-4">Iron Blood Protocol &copy; 2026</p>
+        <div class="max-w-2xl mx-auto opacity-50 mb-6 lowercase">
+            <p class="mb-2">Disclaimer: These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
+            <p>Nutritional Engineering Systems. results may vary. always consult your physician before starting any nutritional or fitness program.</p>
+        </div>
     </footer>
 
     <script>
-        function enviarYCheckout() {
-            // Señal para Meta Ads
-            if(typeof fbq !== 'undefined') {
-                fbq('track', 'InitiateCheckout', {
-                    value: 7.00,
-                    currency: 'USD',
-                    content_name: 'Iron Blood Protocol'
-                }); 
-            }
+        // TIMER
+        let time = 15 * 60;
+        const minEl = document.getElementById('minutes');
+        const secEl = document.getElementById('seconds');
+        setInterval(() => {
+            const minutes = Math.floor(time / 60);
+            let seconds = time % 60;
+            minEl.innerHTML = minutes;
+            secEl.innerHTML = seconds < 10 ? '0' + seconds : seconds;
+            if(time > 0) time--;
+        }, 1000);
 
-            // Datos de Telegram (Tus IDs reales)
+        // LEAD FLASH LOGIC (Aparición a los 3 seg, desaparece a los 8 seg)
+        const leadFlash = document.getElementById('lead-notification');
+        setTimeout(() => {
+            leadFlash.classList.remove('hidden');
+            setTimeout(() => {
+                leadFlash.classList.add('hidden');
+            }, 5000);
+        }, 3000);
+
+        function enviarYCheckout() {
+            if(typeof fbq !== 'undefined') {
+                fbq('track', 'InitiateCheckout', { value: 7.00, currency: 'USD' }); 
+            }
             const token = "8052716107:AAEDIOg4602ipHex5o6nLeYijV8u4KFe484"; 
             const chatId = "960868017"; 
-            const mensaje = `🩸 ¡NUEVO CLICK EN IRON BLOOD! %0A💰 Precio: $7 USD %0A🛒 Estado: El usuario va hacia el checkout de Hotmart...`;
-
+            const mensaje = `🟢 ¡USA LEAD ALERT! %0A💰 Value: $7 USD %0A🚀 Moving to Hotmart...`;
             fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${mensaje}`)
                 .finally(() => {
-                    // Redirección directa al checkout de Hotmart en inglés
                     window.location.href = 'https://pay.hotmart.com/L104795700C?checkoutMode=10&lang=en';
                 });
         }
     </script>
 
 </body>
-                                                                           </html>
-
+</html>
