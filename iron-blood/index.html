@@ -16,10 +16,13 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1608774633574519');
+    // ID DEL PÍXEL ACTUALIZADO SEGÚN TU CAPTURA
+    fbq('init', '2801471720219605');
     fbq('track', 'PageView');
     </script>
-
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=2801471720219605&ev=PageView&noscript=1"
+    /></noscript>
     <style>
         .hero-bg { background-color: #f9fafb; }
         .cta-pulse { animation: pulse 2s infinite; }
@@ -241,6 +244,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script>
+        // Initialize Swiper
         const swiper = new Swiper('.mySwiper', {
             loop: true,
             grabCursor: true,
@@ -255,7 +259,8 @@
             },
         });
 
-        let time = 15 * 60;
+        // Timer Logic
+        let time = 15 * 60; // 15 minutes in seconds
         const minEl = document.getElementById('minutes');
         const secEl = document.getElementById('seconds');
         setInterval(() => {
@@ -266,13 +271,14 @@
             if(time > 0) time--;
         }, 1000);
 
+        // Fake Lead Notification Logic
         const leadFlash = document.getElementById('lead-notification');
         setTimeout(() => {
             leadFlash.classList.remove('hidden');
             setTimeout(() => { leadFlash.classList.add('hidden'); }, 5000);
-        }, 3000);
+        }, 3000); // Show after 3 seconds
 
-        // FUNCIÓN MEJORADA: CONEXIÓN API META + BOT TELEGRAM
+        // FUNCIÓN DE COMPRA: CONEXIÓN API META + BOT TELEGRAM
         function enviarYCheckout() {
             // 1. DISPARAR EVENTO DE META (Indispensable para que el algoritmo aprenda)
             if(typeof fbq !== 'undefined') {
@@ -289,14 +295,14 @@
             const chatId = "960868017"; 
             const mensaje = `🟢 *IRON-BLOOD LEAD ALERT*%0A💰 Valor: $7 USD%0A🎯 Acción: Clic en Compra%0A🚀 Estado: Redirigiendo a Hotmart...`;
             
-            // Usamos fetch con una pequeña demora para asegurar que Meta reciba el evento antes de salir
+            // Usamos fetch para avisar a Telegram
             fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${mensaje}&parse_mode=Markdown`)
                 .finally(() => {
-                    // 3. REDIRECCIÓN FINAL A HOTMART
+                    // 3. REDIRECCIÓN FINAL A HOTMART (Después de avisar a Telegram)
                     window.location.href = 'https://pay.hotmart.com/L104795700C?checkoutMode=10&lang=en';
                 });
         }
     </script>
-</body> 
-</html>
-                
+</body>
+                    </html>
+    
