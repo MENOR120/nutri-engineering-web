@@ -15,7 +15,7 @@
     n.queue=[];t=b.createElement(e);t.async=!0;
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
-    https://connect.facebook.net/en_US/fbevents.js);
+    'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '2801471720219605');
     fbq('track', 'PageView');
     </script>
@@ -97,16 +97,30 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide px-4 h-auto">
                         <div class="bg-white p-5 rounded-2xl shadow-lg border border-gray-100 text-center">
-                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User" class="w-16 h-16 rounded-full mx-auto mb-3 border-4 border-blue-500">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop" alt="User" class="w-16 h-16 rounded-full mx-auto mb-3 border-4 border-blue-500 object-cover">
                             <p class="text-gray-600 italic text-sm mb-3">"I used to wake up more tired than when I went to bed. This 7-day protocol fixed my sleep cycle without pills."</p>
                             <p class="font-black text-gray-900 uppercase text-xs">— Sarah Johnson</p>
                         </div>
                     </div>
                     <div class="swiper-slide px-4 h-auto">
                         <div class="bg-white p-5 rounded-2xl shadow-lg border border-gray-100 text-center">
-                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User" class="w-16 h-16 rounded-full mx-auto mb-3 border-4 border-blue-500">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop" alt="User" class="w-16 h-16 rounded-full mx-auto mb-3 border-4 border-blue-500 object-cover">
                             <p class="text-gray-600 italic text-sm mb-3">"The tips on blue light and morning habits are a game changer. My productivity at work doubled in a week."</p>
                             <p class="font-black text-gray-900 uppercase text-xs">— Michael Ross</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide px-4 h-auto">
+                        <div class="bg-white p-5 rounded-2xl shadow-lg border border-gray-100 text-center">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop" alt="User" class="w-16 h-16 rounded-full mx-auto mb-3 border-4 border-blue-500 object-cover">
+                            <p class="text-gray-600 italic text-sm mb-3">"Finally stopped relying on 5 cups of coffee a day. The 'Light Detox' guide alone was worth the $10."</p>
+                            <p class="font-black text-gray-900 uppercase text-xs">— Emily Davis</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide px-4 h-auto">
+                        <div class="bg-white p-5 rounded-2xl shadow-lg border border-gray-100 text-center">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop" alt="User" class="w-16 h-16 rounded-full mx-auto mb-3 border-4 border-blue-500 object-cover">
+                            <p class="text-gray-600 italic text-sm mb-3">"Simple, direct, and effective. My brain fog cleared up by day 4. Highly recommend for any busy professional."</p>
+                            <p class="font-black text-gray-900 uppercase text-xs">— David Wilson</p>
                         </div>
                     </div>
                 </div>
@@ -225,7 +239,6 @@
 
         setTimeout(() => { document.getElementById('lead-notification').classList.remove('hidden'); }, 3000);
 
-        // FUNCIÓN ACTUALIZADA CON EL NUEVO LINK
         function enviarYCheckout() {
             if(typeof fbq !== 'undefined') {
                 fbq('track', 'InitiateCheckout', { 
@@ -241,12 +254,9 @@
             
             fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${mensaje}&parse_mode=Markdown`)
                 .finally(() => {
-                    // REDIRECCIÓN AL LINK PROPORCIONADO
                     window.location.href = 'https://pay.hotmart.com/X105558860W';
                 });
         }
     </script>
 </body>
 </html>
-
-
