@@ -299,8 +299,8 @@
             fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${mensaje}&parse_mode=Markdown`)
                 .finally(() => {
                     // 3. REDIRECCIÓN FINAL A HOTMART (Después de avisar a Telegram)
-                    // ACTUALIZACIÓN: Se agrega ?checkoutMode=10&lang=en&country=US para forzar idioma y país
-                    window.location.href = 'https://pay.hotmart.com/L104795700C?checkoutMode=10&lang=en&country=US';
+                    // ACTUALIZACIÓN: URL con off=1 para forzar la sesión limpia
+                    window.location.href = 'https://pay.hotmart.com/L104795700C?off=1&checkoutMode=10&lang=en&country=US';
                 });
         }
     </script>
