@@ -16,7 +16,6 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    // ID DEL PÍXEL ACTUALIZADO SEGÚN TU CAPTURA
     fbq('init', '2801471720219605');
     fbq('track', 'PageView');
     </script>
@@ -122,14 +121,14 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide px-4 h-auto">
                         <div class="bg-white p-5 rounded-2xl shadow-lg border border-gray-100 text-center">
-                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User" class="w-16 h-16 rounded-full mx-auto mb-3 border-4 border-green-500">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop" alt="User Sarah" class="w-16 h-16 rounded-full mx-auto mb-3 border-4 border-green-500 object-cover">
                             <p class="text-gray-600 italic text-sm mb-3">"I couldn't even finish my work day without a nap. After 7 days of following this simple protocol, I feel like a new person."</p>
                             <p class="font-black text-gray-900 uppercase text-xs">— Sarah Johnson</p>
                         </div>
                     </div>
                     <div class="swiper-slide px-4 h-auto">
                         <div class="bg-white p-5 rounded-2xl shadow-lg border border-gray-100 text-center">
-                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User" class="w-16 h-16 rounded-full mx-auto mb-3 border-4 border-green-500">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop" alt="User Michael" class="w-16 h-16 rounded-full mx-auto mb-3 border-4 border-green-500 object-cover">
                             <p class="text-gray-600 italic text-sm mb-3">"Finally a method that works without expensive supplements. The science behind food pairing is a game changer."</p>
                             <p class="font-black text-gray-900 uppercase text-xs">— Michael Ross</p>
                         </div>
@@ -244,7 +243,6 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script>
-        // Initialize Swiper
         const swiper = new Swiper('.mySwiper', {
             loop: true,
             grabCursor: true,
@@ -259,8 +257,7 @@
             },
         });
 
-        // Timer Logic
-        let time = 15 * 60; // 15 minutes in seconds
+        let time = 15 * 60; 
         const minEl = document.getElementById('minutes');
         const secEl = document.getElementById('seconds');
         setInterval(() => {
@@ -271,16 +268,13 @@
             if(time > 0) time--;
         }, 1000);
 
-        // Fake Lead Notification Logic
         const leadFlash = document.getElementById('lead-notification');
         setTimeout(() => {
             leadFlash.classList.remove('hidden');
             setTimeout(() => { leadFlash.classList.add('hidden'); }, 5000);
-        }, 3000); // Show after 3 seconds
+        }, 3000);
 
-        // FUNCIÓN DE COMPRA: CONEXIÓN API META + BOT TELEGRAM
         function enviarYCheckout() {
-            // 1. DISPARAR EVENTO DE META (Indispensable para que el algoritmo aprenda)
             if(typeof fbq !== 'undefined') {
                 fbq('track', 'InitiateCheckout', { 
                     value: 7.00, 
@@ -290,16 +284,12 @@
                 }); 
             }
 
-            // 2. AVISAR AL BOT DE TELEGRAM
             const token = "8052716107:AAEDIOg4602ipHex5o6nLeYijV8u4KFe484"; 
             const chatId = "960868017"; 
             const mensaje = `🟢 *IRON-BLOOD LEAD ALERT*%0A💰 Valor: $7 USD%0A🎯 Acción: Clic en Compra%0A🚀 Estado: Redirigiendo a Hotmart...`;
             
-            // Usamos fetch para avisar a Telegram
             fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${mensaje}&parse_mode=Markdown`)
                 .finally(() => {
-                    // 3. REDIRECCIÓN FINAL A HOTMART (Después de avisar a Telegram)
-                    // ACTUALIZACIÓN: URL con off=1 para forzar la sesión limpia
                     window.location.href = 'https://pay.hotmart.com/L104795700C?off=1&checkoutMode=10&lang=en&country=US';
                 });
         }
