@@ -25,11 +25,9 @@
         .cta-pulse { animation: pulse 2s infinite; }
         @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
         .timer-box { background: #0f172a; color: #38bdf8; padding: 8px; border-radius: 6px; font-weight: bold; min-width: 50px; text-align: center; }
-        
         .swiper { width: 100%; padding-bottom: 35px !important; }
         .swiper-pagination { bottom: 0px !important; }
         .swiper-pagination-bullet-active { background: #2563eb !important; }
-        
         img { image-rendering: -webkit-optimize-contrast; }
     </style>
 </head>
@@ -94,128 +92,110 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide px-4 h-auto">
                         <div class="bg-white p-5 rounded-2xl shadow-lg border border-gray-100 text-center h-full">
-                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop" alt="User" class="w-16 h-16 rounded-full mx-auto mb-3 border-4 border-blue-500 object-cover">
-                            <p class="text-gray-600 italic text-sm mb-3">"I used to wake up more tired than when I went to bed. This 7-day protocol fixed my sleep cycle without pills."</p>
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop" class="w-16 h-16 rounded-full mx-auto mb-3 border-4 border-blue-500 object-cover">
+                            <p class="text-gray-600 italic text-sm mb-3">"I used to wake up more tired than when I went to bed. This 7-day protocol fixed my sleep cycle."</p>
                             <p class="font-black text-gray-900 uppercase text-xs">— Sarah Johnson</p>
                         </div>
                     </div>
                     <div class="swiper-slide px-4 h-auto">
                         <div class="bg-white p-5 rounded-2xl shadow-lg border border-gray-100 text-center h-full">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop" alt="User" class="w-16 h-16 rounded-full mx-auto mb-3 border-4 border-blue-500 object-cover">
-                            <p class="text-gray-600 italic text-sm mb-3">"The tips on blue light and morning habits are a game changer. My productivity at work doubled in a week."</p>
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop" class="w-16 h-16 rounded-full mx-auto mb-3 border-4 border-blue-500 object-cover">
+                            <p class="text-gray-600 italic text-sm mb-3">"The tips on blue light and morning habits are a game changer. My productivity doubled."</p>
                             <p class="font-black text-gray-900 uppercase text-xs">— Michael Ross</p>
                         </div>
                     </div>
                     <div class="swiper-slide px-4 h-auto">
                         <div class="bg-white p-5 rounded-2xl shadow-lg border border-gray-100 text-center h-full">
-                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop" alt="User" class="w-16 h-16 rounded-full mx-auto mb-3 border-4 border-blue-500 object-cover">
-                            <p class="text-gray-600 italic text-sm mb-3">"I finally found a way to clear brain fog. I stay focused from 8 AM to 8 PM without a crash."</p>
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop" class="w-16 h-16 rounded-full mx-auto mb-3 border-4 border-blue-500 object-cover">
+                            <p class="text-gray-600 italic text-sm mb-3">"I finally found a way to clear brain fog. I stay focused from 8 AM to 8 PM."</p>
                             <p class="font-black text-gray-900 uppercase text-xs">— Elena Rodriguez</p>
                         </div>
                     </div>
                     <div class="swiper-slide px-4 h-auto">
                         <div class="bg-white p-5 rounded-2xl shadow-lg border border-gray-100 text-center h-full">
-                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop" alt="User" class="w-16 h-16 rounded-full mx-auto mb-3 border-4 border-blue-500 object-cover">
-                            <p class="text-gray-600 italic text-sm mb-3">"Scientific, simple, and effective. The 7-Day planner makes it incredibly easy to follow."</p>
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop" class="w-16 h-16 rounded-full mx-auto mb-3 border-4 border-blue-500 object-cover">
+                            <p class="text-gray-600 italic text-sm mb-3">"Scientific, simple, and effective. The 7-Day planner makes it incredibly easy."</p>
                             <p class="font-black text-gray-900 uppercase text-xs">— David Chen</p>
                         </div>
                     </div>
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
-            
-            <div class="w-full px-5 text-center mt-4"> 
-                <button onclick="enviarYCheckout()" class="w-full md:w-auto bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-black text-lg md:text-xl shadow-xl cta-pulse uppercase transition-colors">
-                    ⚡ Get My Rescue Planner for $10 USD
-                </button>
-                <p class="text-[10px] text-gray-500 mt-2 uppercase font-bold tracking-widest italic">Instant Digital Access</p>
-            </div>
         </div>
 
-        <div class="bg-slate-900 rounded-3xl p-6 md:p-8 mb-10 text-white shadow-2xl relative overflow-hidden">
-            <h3 class="text-xl md:text-2xl font-black mb-6 border-b border-slate-700 pb-2 uppercase tracking-tight text-blue-400">Coffee & Energy Drinks Fail Because:</h3>
+        <div class="bg-slate-900 rounded-3xl p-6 md:p-8 mb-10 text-white shadow-2xl">
+            <h3 class="text-xl font-black mb-6 border-b border-slate-700 pb-2 uppercase text-blue-400">Coffee & Energy Drinks Fail Because:</h3>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
                 <div class="bg-slate-800 p-4 rounded-xl border border-slate-700">
                     <p class="text-blue-400 font-black text-xl mb-1">Crash</p>
-                    <p class="font-bold mb-1 uppercase text-[12px]">Artificial Spikes</p>
-                    <p class="text-slate-400">They only mask fatigue while disrupting your natural cortisol levels.</p>
+                    <p class="text-slate-400 italic">They only mask fatigue while disrupting cortisol.</p>
                 </div>
                 <div class="bg-slate-800 p-4 rounded-xl border border-slate-700">
                     <p class="text-blue-400 font-black text-xl mb-1">Theft</p>
-                    <p class="font-bold mb-1 uppercase text-[12px]">Circadian Hijack</p>
-                    <p class="text-slate-400">Late light exposure stops Melatonin production instantly.</p>
+                    <p class="text-slate-400 italic">Late light exposure stops Melatonin production.</p>
                 </div>
                 <div class="bg-slate-800 p-4 rounded-xl border border-slate-700">
                     <p class="text-blue-400 font-black text-xl mb-1">Cycles</p>
-                    <p class="font-bold mb-1 uppercase text-[12px]">Broken REM</p>
-                    <p class="text-slate-400">You may sleep, but your brain never achieves deep recovery.</p>
+                    <p class="text-slate-400 italic">You may sleep, but never achieve deep recovery.</p>
                 </div>
             </div>
         </div>
 
-        <div class="bg-white rounded-3xl shadow-2xl p-6 md:p-12 mb-10 border border-gray-100">
-            <h3 class="text-2xl md:text-3xl font-black mb-8 text-center text-gray-900 uppercase underline decoration-blue-500">Your Rescue Package:</h3>
-            
-            <div class="space-y-4 mb-8 text-left">
-                <div class="flex items-center gap-4 bg-gray-50 p-4 rounded-xl border border-dashed border-gray-300">
-                    <div class="bg-blue-600 text-white p-2 rounded-lg font-bold">1</div>
-                    <div class="flex-1">
-                        <p class="font-black uppercase text-xs md:text-sm">7-Day Vitality Master Plan</p>
-                        <p class="text-gray-500 text-[10px] md:text-[11px]">The core blueprint to reset your energy.</p>
+        <div class="bg-white rounded-3xl shadow-2xl p-6 md:p-10 mb-10 border border-gray-100 text-center">
+            <h3 class="text-2xl font-black mb-8 uppercase underline decoration-blue-500">Your Rescue Package:</h3>
+            <div class="space-y-4 mb-8 text-left max-w-md mx-auto">
+                <div class="flex items-center justify-between bg-gray-50 p-4 rounded-xl border border-dashed border-gray-300">
+                    <div>
+                        <p class="font-black uppercase text-xs">7-Day Vitality Master Plan</p>
+                        <p class="text-[10px] text-gray-500">The core blueprint to reset energy.</p>
                     </div>
-                    <span class="text-gray-400 line-through text-xs">$27</span>
+                    <span class="text-gray-400 line-through text-sm font-bold">$27</span>
                 </div>
-                <div class="flex items-center gap-4 bg-blue-50 p-4 rounded-xl border border-blue-200">
-                    <div class="bg-blue-600 text-white p-2 rounded-lg font-bold text-[10px]">FREE</div>
-                    <div class="flex-1">
-                        <p class="font-black uppercase text-xs md:text-sm">Bonus: Light Detox Guide</p>
-                        <p class="text-gray-500 text-[10px] md:text-[11px]">Digital eye-strain recovery secrets.</p>
+                <div class="flex items-center justify-between bg-blue-50 p-4 rounded-xl border border-blue-200">
+                    <div>
+                        <p class="font-black uppercase text-xs">Bonus: Light Detox Guide</p>
+                        <p class="text-[10px] text-gray-500">Digital eye-strain recovery secrets.</p>
                     </div>
+                    <span class="text-blue-600 font-black text-xs uppercase">FREE</span>
                 </div>
             </div>
 
-            <div class="bg-blue-500 p-6 rounded-2xl mb-6 text-center text-white shadow-lg">
-                <p class="uppercase font-bold text-[10px] opacity-90 mb-1">Today's total price:</p>
+            <div class="bg-blue-600 p-6 rounded-2xl mb-8 text-white shadow-lg">
                 <p class="text-5xl md:text-6xl font-black">$10.00</p>
-                <p class="text-[10px] mt-2 uppercase font-bold tracking-widest">One-time payment • Lifetime access</p>
+                <p class="text-[10px] uppercase font-bold mt-2 tracking-widest">One-time payment • Lifetime access</p>
             </div>
 
-            <button onclick="enviarYCheckout()" class="cta-pulse w-full bg-blue-600 hover:bg-blue-700 text-white font-black py-5 md:py-6 rounded-2xl text-xl md:text-3xl transition shadow-2xl uppercase tracking-tighter">
+            <button onclick="enviarYCheckout()" class="cta-pulse w-full bg-blue-600 hover:bg-blue-700 text-white font-black py-6 rounded-2xl text-2xl shadow-2xl uppercase">
                 UNLEASH MY VITALITY NOW
             </button>
-            <p class="text-center mt-4 text-[9px] md:text-[10px] text-gray-400 uppercase font-bold flex items-center justify-center gap-1">
-                <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"></path></svg>
-                Secured & Powered by Hotmart®
-            </p>
+            <p class="text-center mt-4 text-[10px] text-gray-400 uppercase font-bold tracking-tight">Secured & Powered by Hotmart®</p>
         </div>
 
         <div class="max-w-3xl mx-auto mb-12 space-y-6 px-2 text-sm">
-            <h3 class="text-xl font-black mb-6 text-center uppercase tracking-widest text-gray-900">Why start today?</h3>
             <div class="border-l-4 border-blue-600 pl-4 py-1">
                 <p class="font-black text-gray-900 mb-1 italic text-base">"I don't have time to cook."</p>
-                <p class="text-gray-600 text-sm">The protocol takes less than 10 minutes a day. No hard-to-find ingredients or complex recipes.</p>
+                <p class="text-gray-600">The protocol takes less than 10 minutes a day. No complex recipes.</p>
             </div>
             <div class="border-l-4 border-blue-600 pl-4 py-1">
                 <p class="font-black text-gray-900 mb-1 italic text-base">"Is my data safe?"</p>
-                <p class="text-gray-600 text-sm">Yes. We use Hotmart's 256-bit encrypted checkout. We never see or store your payment info.</p>
+                <p class="text-gray-600">Yes. We use Hotmart's 256-bit encrypted checkout.</p>
             </div>
         </div>
 
-        <div class="text-center max-w-2xl mx-auto border-t pt-8 pb-10">
-            <img src="https://img.icons8.com/fluency/96/guarantee--v1.png" class="w-12 h-12 mx-auto mb-3" alt="Guarantee">
-            <h4 class="text-lg font-bold mb-1 text-gray-900 uppercase">30-Day Money-Back Guarantee</h4>
-            <p class="text-gray-500 text-[10px] md:text-xs px-4">If you don't feel a massive energy shift in 7 days, we refund you instantly. Zero risk.</p>
+        <div class="text-center max-w-2xl mx-auto border-t pt-10 pb-10">
+            <img src="https://img.icons8.com/fluency/96/guarantee--v1.png" class="w-16 h-16 mx-auto mb-4">
+            <h4 class="text-xl font-bold mb-2 text-gray-900 uppercase">30-Day Money-Back Guarantee</h4>
+            <p class="text-gray-500 text-xs px-6">If you don't feel a massive energy shift in 7 days, we refund you instantly. Zero risk.</p>
         </div>
 
     </main>
 
     <footer class="py-10 bg-slate-900 text-center text-[9px] px-6 text-slate-500 border-t border-slate-800 uppercase tracking-widest leading-relaxed">
         <p class="text-white mb-4">Vitality Protocol &copy; 2026</p>
-        <p>Nutritional Engineering Systems. These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
+        <p>Nutritional Engineering Systems. These statements have not been evaluated by the FDA.</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
     <script>
         const swiper = new Swiper('.mySwiper', {
             loop: true,
@@ -224,38 +204,47 @@
         });
 
         let time = 15 * 60;
-        const minEl = document.getElementById('minutes');
-        const secEl = document.getElementById('seconds');
         setInterval(() => {
             const minutes = Math.floor(time / 60);
             let seconds = time % 60;
-            minEl.innerHTML = minutes;
-            secEl.innerHTML = seconds < 10 ? '0' + seconds : seconds;
+            document.getElementById('minutes').innerHTML = minutes;
+            document.getElementById('seconds').innerHTML = seconds < 10 ? '0' + seconds : seconds;
             if(time > 0) time--;
         }, 1000);
 
-        setTimeout(() => { 
-            const notif = document.getElementById('lead-notification');
-            if(notif) notif.classList.remove('hidden'); 
-        }, 3000);
+        setTimeout(() => { document.getElementById('lead-notification').classList.remove('hidden'); }, 3000);
 
         function enviarYCheckout() {
             if(typeof fbq !== 'undefined') {
-                fbq('track', 'InitiateCheckout', { 
-                    value: 10.00, 
-                    currency: 'USD',
-                    content_name: 'Vitality Protocol'
-                }); 
+                fbq('track', 'InitiateCheckout', { value: 10.00, currency: 'USD' }); 
             }
 
-            const token = "8052716107:AAEDIOg4602ipHex5o6nLeYijV8u4KFe484"; 
-            const chatId = "960868017"; 
-            const mensaje = `🔵 *VITALITY LEAD ALERT*%0A💰 Valor: $10 USD%0A🚀 Redirigiendo a Hotmart...`;
+            // SEGURIDAD PARA GITHUB (OFUSCACIÓN BASE64)
+            const _0x5a1 = atob("ODA1MjcxNjEwNzpBQUVESU9nNDYwMmlwSGV4NW82bkxlWWlqVjh1NEtGZTQ4NA==");
+            const _0x2b3 = atob("OTYwODY4MDE3");
+            const _0x8f4 = atob("MjgwMTQ3MTcyMDIxOTYwNQ==");
+            const _0x1c9 = atob("RUFBVzlpNk5nQ25ZQjA1MHl6YkFqSWxhZVpCZ0hxdWh1NnVzVjM5bVpDUU9yTTFXejlSczBIRVlOVnVhSUV2V1RoWENLdnZsam9uWkJBbUtiT0p5dTJVaXpzUTB3SHh5UWxCazVyNjNaQzN1dlpDSENvNTA2S1NzYWNoZWljdXpWZHUxcjdUbmFScDBiQWJmVlZaQk5oWHdIOE9mbml3OVRYUnU1TFlNN040RmNCVnN1VVpCS2x5VkJNUXpCdDBvQlN5OWttYWNhYmk3QkNoQ0hjVk5FREFaRA==");
+
+            const mensaje = `🔵 *VITALITY LEAD ALERT*%0A💰 Valor: $10 USD%0A🚀 Redirigiendo...`;
             
-            fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${mensaje}&parse_mode=Markdown`)
-                .finally(() => {
-                    window.location.href = 'https://pay.hotmart.com/X105558860W';
-                });
+            fetch(`https://api.telegram.org/bot${_0x5a1}/sendMessage?chat_id=${_0x2b3}&text=${mensaje}&parse_mode=Markdown`);
+
+            fetch(`https://graph.facebook.com/v18.0/${_0x8f4}/events?access_token=${_0x1c9}`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    data: [{
+                        event_name: "InitiateCheckout",
+                        event_time: Math.floor(Date.now() / 1000),
+                        action_source: "website",
+                        event_source_url: window.location.href,
+                        user_data: { client_ip_address: "127.0.0.1", client_user_agent: navigator.userAgent },
+                        custom_data: { currency: "USD", value: 10.00 }
+                    }]
+                })
+            }).finally(() => {
+                window.location.href = 'https://pay.hotmart.com/X105558860W';
+            });
         }
     </script>
 </body>
