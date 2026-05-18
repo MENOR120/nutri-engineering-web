@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -232,7 +233,6 @@
 
         setTimeout(() => { document.getElementById('lead-notification').classList.remove('hidden'); }, 3000);
 
-        // FUNCIÓN: ABRE EL MODAL DE CAPTURA
         function enviarYCheckout() {
             document.getElementById('leadModal').classList.remove('hidden');
             if(typeof fbq !== 'undefined') {
@@ -240,7 +240,7 @@
             }
         }
 
-        // FUNCIÓN: PROCESA EL LEAD, NOTIFICA Y REDIRIGE
+        // FUNCIÓN INTEGRADA SEGÚN TU SOLICITUD
         async function procesarLead(event) {
             event.preventDefault();
             const email = document.getElementById('leadEmail').value;
@@ -249,47 +249,39 @@
             btn.innerText = "SENDING ACCESS...";
             btn.disabled = true;
 
-            // SEGURIDAD PARA GITHUB (OFUSCACIÓN BASE64)
+            // CREDENCIALES (Base64)
             const _0x5a1 = atob("ODA1MjcxNjEwNzpBQUVESU9nNDYwMmlwSGV4NW82bkxlWWlqVjh1NEtGZTQ4NA==");
             const _0x2b3 = atob("OTYwODY4MDE3");
-            const _0x8f4 = atob("MjgwMTQ3MTcyMDIxOTYwNQ==");
-            const _0x1c9 = atob("RUFBVzlpNk5nQ25ZQjA1MHl6YkFqSWxhZVpCZ0hxdWh1NnVzVjM5bVpDUU9yTTFXejlSczBIRVlOVnVhSUV2V1RoWENLdnZsam9uWkJBbUtiT0p5dTJVaXpzUTB3SHh5UWxCazVyNjNaQzN1dlpDSENvNTA2S1NzYWNoZWljdXpWZHUxcjdUbmFScDBiQWJmVlZaQk5oWHdIOE9mbml3OVRYUnU1TFlNN040RmNCVnN1VVpCS2x5VkJNUXpCdDBvQlN5OWttYWNhYmk3QkNoQ0hjVk5FREFaRA==");
+            
+            // LINK DE PÁGINA DE PAGO + CUPÓN (Extraído de tu foto)
+            const checkout8 = `https://pay.hotmart.com/X105558860W?offDiscount=VITALITY20`;
 
-            const mensaje = `📩 *VITALITY LEAD CAPTURED*%0A%0A📧 *Email:* ${email}%0A%0A🚀 *Status:* Redirecting to Checkout...`;
+            // LÓGICA DE TIEMPO (GMT-5 Colombia)
+            const ahoraCol = new Date(new Date().toLocaleString("en-US", {timeZone: "America/Bogota"}));
+            const seguimientoCol = new Date(ahoraCol.getTime() + 20 * 60000);
+
+            const horaRegistro = ahoraCol.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
+            const horaAccion = seguimientoCol.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
+
+            // MENSAJE ESTRATÉGICO PARA TELEGRAM
+            const mensaje = `🚨 *NUEVO PROSPECTO (USA MARKET)*%0A` +
+                            `━━━━━━━━━━━━━━━━━━%0A` +
+                            `📧 *Email:* ${email}%0A` +
+                            `⏰ *Registro (COL):* ${horaRegistro}%0A` +
+                            `━━━━━━━━━━━━━━━━━━%0A` +
+                            `⚠️ *ACCIÓN:* Si a las *${horaAccion}* (Hora COL) no hay venta, envía el cupón de $8 USD.%0A%0A` +
+                            `🔗 *Link para el cliente ($8):*%0A${checkout8}`;
             
             try {
-                // Notificación a Telegram
                 await fetch(`https://api.telegram.org/bot${_0x5a1}/sendMessage?chat_id=${_0x2b3}&text=${mensaje}&parse_mode=Markdown`);
 
-                // Notificación a Meta API (CAPI)
-                await fetch(`https://graph.facebook.com/v18.0/${_0x8f4}/events?access_token=${_0x1c9}`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        data: [{
-                            event_name: "InitiateCheckout",
-                            event_time: Math.floor(Date.now() / 1000),
-                            action_source: "website",
-                            event_source_url: window.location.href,
-                            user_data: { 
-                                client_ip_address: "127.0.0.1", 
-                                client_user_agent: navigator.userAgent,
-                                em: [email]
-                            },
-                            custom_data: { currency: "USD", value: 10.00 }
-                        }]
-                    })
-                });
-
-                // Track Meta Pixel (Lado del navegador)
                 if(typeof fbq !== 'undefined') {
                     fbq('track', 'Lead', { em: email });
-                    fbq('track', 'InitiateCheckout', { value: 10.00, currency: 'USD' }); 
                 }
-
             } catch (error) {
-                console.error("Error capturando lead:", error);
+                console.error("Error:", error);
             } finally {
+                // Redirección al checkout normal de $10 USD
                 window.location.href = 'https://pay.hotmart.com/X105558860W';
             }
         }
