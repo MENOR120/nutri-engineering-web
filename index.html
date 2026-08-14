@@ -33,6 +33,12 @@
             animation: latido 1.5s infinite;
         }
 
+        /* Estilo específico para el botón de compra */
+        .btn-compra {
+            background-color: #FF5722;
+            animation: none; /* Quitamos la animación de latido para diferenciarlo */
+        }
+
         @keyframes latido {
             0% { transform: scale(1); }
             50% { transform: scale(1.03); box-shadow: 0 0 15px rgba(37, 211, 102, 0.5); }
@@ -47,9 +53,14 @@
         <img src="tu-foto.webp" alt="Primeros Auxilios Mascotas">
         <p>Aprende a proteger a tu mascota en emergencias.</p>
         
-        <!-- AQUÍ VA TU ENLACE DE WHATSAPP -->
+        <!-- ENLACE DE WHATSAPP -->
         <a href="https://api.whatsapp.com/send?phone=573186632478&text=Hola,%20quiero%20info%20de%20la%20mascota" class="btn">
             Obtener Información
+        </a>
+
+        <!-- NUEVO BOTÓN DE COMPRA -->
+        <a href="https://go.hotmart.com/L107151862O" class="btn btn-compra">
+            Comprar Curso Ahora
         </a>
     </div>
 </body>
