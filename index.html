@@ -43,14 +43,36 @@
 <body>
     <div class="container">
         <h2>Guía de Primeros Auxilios</h2>
-        <!-- Cambia 'tu-foto.jpg' por el nombre real de tu imagen -->
         <img src="tu-foto.webp" alt="Primeros Auxilios Mascotas">
         <p>Aprende a proteger a tu mascota en emergencias.</p>
         
-        <!-- BOTÓN DE COMPRA ÚNICO CON ANIMACIÓN -->
-        <a href="https://go.hotmart.com/L107151862O" class="btn">
+        <!-- BOTÓN DE COMPRA ÚNICO CON ID PARA RASTREO -->
+        <a href="https://go.hotmart.com/L107151862O" class="btn" id="btn-comprar">
             Comprar Curso Ahora
         </a>
     </div>
+
+    <!-- SCRIPT DE SEGUIMIENTO CON TELEGRAM -->
+    <script>
+        // CONFIGURACIÓN DE TU BOT
+        const tokenBot = '8496082289:AAFEWrgLF_Ngs3l7VAidskgV1ppe7yMLslY'; 
+        const chatId = '960868017'; 
+
+        // Función para enviar mensajes a Telegram
+        function notificarTelegram(mensaje) {
+            const url = `https://api.telegram.org/bot${tokenBot}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(mensaje)}`;
+            fetch(url).catch(error => console.log('Error al notificar:', error));
+        }
+
+        // 1. Registrar cuando alguien entra a la página
+        window.addEventListener('load', () => {
+            notificarTelegram("👁️ Un usuario acaba de entrar a la Landing Page de Mascotas.");
+        });
+
+        // 2. Registrar cuando alguien hace clic en el botón de comprar
+        document.getElementById('btn-comprar').addEventListener('click', () => {
+            notificarTelegram("🔥 ¡Alguien hizo clic en COMPRAR CURSO AHORA!");
+        });
+    </script>
 </body>
 </html>
