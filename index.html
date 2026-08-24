@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <!-- ETIQUETA PARA EL FAVICON DEL NAVEGADOR -->
+    <link rel="icon" href="favicon.png" type="image/png">
+    
+    <title>Cuidado Animal - FaunaVideos</title>
+    <style>
+        /* PALETA DE COLORES BASADA EN LAS IMÁGENES (TEMÁTICA ROJA/OSCURA) */
+        :root {
+            --bg-color-main: #0d0d0d; 
+            --bg-color-gradient: #220b0b; 
+            --container-bg: #ffffff;
+            --main-accent-red: #8e1c1c; 
+            --brighter-red: #d32f2f; 
+            --primary-text: #1a1a1a;
+            --secondary-text: #555555;
+            --price-box-bg: #fff5f5; 
+            --price-original-color: #888888;
+            --price-offer-color: #27ae60; 
+            --btn-bg: #8e1c1c; 
+            --btn-box-shadow: rgba(142, 28, 28, 0.4); 
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+            text-align: center; 
+            margin: 0;
+            padding: 12px; 
+            background-color: var(--bg-color-main);
+            background-image: radial-gradient(circle, var(--bg-color-gradient) 0%, var(--bg-color-main) 100%);
+            color: var(--primary-text);
+            min-height: 100vh;
+        }
+
+        .container { 
+            width: 100%;
+            max-width: 414px; /* Ancho estándar optimizado para pantallas móviles */
+            margin: 0 auto; 
+            background: var(--container-bg); 
+            padding: 16px; 
+            border-radius: 16px; 
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25); 
+            border: 2px solid var(--main-accent-red); 
+            
+            /* Posición relativa para poder ubicar el icono en la esquina */
+            position: relative; 
+        }
+
+        /* --- ESTILO PARA EL ICONO SUPERIOR DERECHO --- */
+        .top-right-icon {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 35px; /* Tamaño del icono */
+            height: 35px;
+            border-radius: 50%; /* Lo hace circular, quítalo si tu logo es cuadrado */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            z-index: 10;
+            background-color: white; /* Por si tiene transparencias */
+            padding: 2px;
+        }
+
+        .main-hero-image { 
+            width: 100%; 
+            height: auto;
+            border-radius: 12px; 
+            margin-bottom: 14px; 
+            display: block;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+        }
+        
+        /* Título optimizado para móviles */
+        h2 {
+            font-size: 20px;
+            line-height: 1.3;
+            margin-top: 5px;
+            margin-bottom: 12px;
+            animation: flotar 3s ease-in-out infinite;
+            color: var(--primary-text);
+            padding-right: 35px; /* Evita que el título se encime con el icono */
+        }
+
+        p {
+            font-size: 14px;
+            line-height: 1.4;
+            color: var(--secondary-text);
+            margin-bottom: 14px;
+        }
+
+        @keyframes flotar {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-3px); }
+        }
+
+        /* --- BLOQUE DE PRECIO MÓVIL --- */
+        .precio-contenedor {
+            margin: 12px 0;
+            padding: 12px;
+            background-color: var(--price-box-bg); 
+            border-radius: 10px;
+            border: 1px dashed var(--main-accent-red); 
+        }
+        .precio-original {
+            text-decoration: line-through;
+            color: var(--price-original-color);
+            font-size: 14px;
+            margin-right: 8px;
+        }
+        .precio-oferta {
+            color: var(--price-offer-color); 
+            font-weight: 900;
+            font-size: 24px;
+        }
+        .texto-urgencia {
+            display: block;
+            color: var(--brighter-red); 
+            font-size: 12px;
+            margin-top: 4px;
+            font-weight: bold;
+        }
+
+        /* --- BOTÓN DE COMPRA TÁCTIL OPTIMIZADO --- */
+        .btn { 
+            display: block; 
+            background-color: var(--btn-bg); 
+            color: white; 
+            padding: 15px; 
+            text-decoration: none; 
+            font-size: 17px; 
+            font-weight: bold; 
+            border-radius: 50px; 
+            margin-top: 14px; 
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px var(--btn-box-shadow);
+            animation: latido 1.5s infinite;
+        }
+
+        @keyframes latido {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); box-shadow: 0 0 12px var(--btn-box-shadow); }
+            100% { transform: scale(1); }
+        }
+
+        /* --- GALERÍA MÓVIL EN UNA SOLA COLUMNA (SCROLL VERTICAL) --- */
+        .image-gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 16px; /* Espacio entre cada tarjeta de imagen */
+            margin-top: 16px;
+            padding: 10px;
+            background-color: rgba(245, 245, 245, 0.9); 
+            border-radius: 12px;
+            border: 1px solid rgba(142, 28, 28, 0.15); 
+        }
+        .gallery-item {
+            text-align: center;
+            background: var(--container-bg);
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: auto; /* Muestra la imagen completa sin recortar */
+            border-radius: 8px;
+            display: block;
+        }
+        .gallery-item p {
+            font-size: 13px;
+            color: var(--secondary-text);
+            margin: 8px 0 2px 0;
+            line-height: 1.3;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <!-- ICONO/FAVICON VISIBLE EN LA ESQUINA -->
+        <img src="favicon.png" alt="Favicon FaunaVideos" class="top-right-icon">
+        
+        <h2>"Cómo salvar a tu mascota en una emergencia (Guía de Primeros Auxilios)"</h2>
+        
+        <!-- IMAGEN PRINCIPAL (HERO) -->
+        <img src="hero.jpg" alt="Primeros Auxilios Golden Retriever y Kit" class="main-hero-image">
+        
+        <p>Aprende a proteger a tu mascota en situaciones críticas y gana total tranquilidad.</p>
+        
+        <!-- BLOQUE DE PRECIO 1 (SUPERIOR) -->
+        <div class="precio-contenedor">
+            <span class="precio-original">$70.000 COP</span>
+            <span class="precio-oferta">$32.447 COP</span>
+            <span class="texto-urgencia">🔥 Oferta exclusiva por tiempo limitado</span>
+        </div>
+        
+        <!-- BOTÓN DE COMPRA 1 (SUPERIOR) -->
+        <!-- NOTA: Cambié el ID por una CLASE (btn-rastreo) para que Telegram registre todos los botones -->
+        <a href="https://go.hotmart.com/L107151862O" class="btn btn-rastreo">
+            Comprar Curso Ahora
+        </a>
+
+        <!-- GALERÍA DE IMÁGENES UNA POR FILA (VISTA COMPLETA) -->
+        <div class="image-gallery">
+            <!-- FOTO 1 -->
+            <div class="gallery-item">
+                <img src="atragantamiento.jpg" alt="Emergencia con Yorkshire Terrier">
+                <p>Técnicas Vitales en Vivo</p>
+            </div>
+            
+            <!-- FOTO 2 -->
+            <div class="gallery-item">
+                <img src="mockup.jpg" alt="Acceso en dispositivos">
+                <p>Acceso Inmediato 24/7</p>
+            </div>
+
+            <!-- BOTÓN DE COMPRA 2 (MEDIO - DESPUÉS DE DOS FOTOS) -->
+            <a href="https://go.hotmart.com/L107151862O" class="btn btn-rastreo" style="margin: 0;">
+                Comprar Curso Ahora
+            </a>
+
+            <!-- FOTO 3 -->
+            <div class="gallery-item">
+                <img src="rcp.jpg" alt="RCP por veterinario">
+                <p>Respaldo Profesional</p>
+            </div>
+            
+            <!-- FOTO 4 -->
+            <div class="gallery-item">
+                <img src="vendaje.jpg" alt="Primeros Auxilios a gato">
+                <p>Cuidado de Perros y Gatos</p>
+            </div>
+        </div>
+
+        <!-- BLOQUE DE PRECIO 2 (INFERIOR/FOOTER) -->
+        <div class="precio-contenedor" style="margin-top: 20px;">
+            <span class="precio-original">$70.000 COP</span>
+            <span class="precio-oferta">$32.447 COP</span>
+            <span class="texto-urgencia">🔥 Oferta exclusiva por tiempo limitado</span>
+        </div>
+        
+        <!-- BOTÓN DE COMPRA 3 (INFERIOR/FOOTER) -->
+        <a href="https://go.hotmart.com/L107151862O" class="btn btn-rastreo">
+            Comprar Curso Ahora
+        </a>
+
+    </div>
+
+    <!-- SCRIPT DE SEGUIMIENTO CON TELEGRAM OFUSCADO -->
+    <script>
+        // Credenciales ofuscadas mediante fragmentación y Base64
+        const _k1 = 'ODQ5NjA4MjI4OTpBQU';
+        const _k2 = 'ZFV3JnTEZfTmdzM2w3';
+        const _k3 = 'VkFpZHNrZ1YxcHBlN3lNTHNsWQ==';
+        
+        const _i1 = 'OTYwOD';
+        const _i2 = 'Y4MDE3';
+
+        // Decodificación en tiempo real de ejecución
+        const tokenBot = atob(_k1 + _k2 + _k3); 
+        const chatId = atob(_i1 + _i2); 
+
+        // Función para enviar mensajes a Telegram
+        function notificarTelegram(mensaje) {
+            const url = `https://api.telegram.org/bot${tokenBot}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(mensaje)}`;
+            fetch(url).catch(error => console.log('Error al notificar:', error));
+        }
+
+        // 1. Registrar cuando alguien entra a la página
+        window.addEventListener('load', () => {
+            notificarTelegram("👁️ Un usuario móvil acaba de entrar a la Landing Page.");
+        });
+
+        // 2. Registrar cuando alguien hace clic en CUALQUIERA de los botones de comprar
+        // Seleccionamos todos los botones que tengan la clase 'btn-rastreo'
+        const botonesCompra = document.querySelectorAll('.btn-rastreo');
+        
+        botonesCompra.forEach(boton => {
+            boton.addEventListener('click', () => {
+                notificarTelegram("🔥 ¡Un usuario móvil hizo clic en COMPRAR CURSO AHORA!");
+            });
+        });
+    </script>
+</body>
+</html>
